@@ -19,11 +19,14 @@ public class TestingInterviewCode {
      */
     public static void main(String[] args) {
         TestingInterviewCode main = new TestingInterviewCode();
-        //main.solution_ex1_1("HELLO WORLD");
-        //boolean result = main.solution_ex1_2("cat","tac");
-        //String result = main.solution_ex1_3("Mr John Smith    ",13);
-        int[] array = {1,2,3};
-        ArrayList<int[]> results = new Permutations().permutations(array);
+        LinkedListNode node1 = new LinkedListNode(3,null);
+        LinkedListNode node2 = new LinkedListNode(5,node1);
+        LinkedListNode node3 = new LinkedListNode(1,node2);
+        LinkedListNode node4 = new LinkedListNode(76,node3);
+        LinkedListNode node5 = new LinkedListNode(7,node4);
+        LinkedListNode head = new LinkedListNode(9,node5);
+        int solution = new KtoLastElement().getKtoLastElement(5,head);
+        System.out.println(solution);
     }
     
     boolean solution_ex1_1(String string){
