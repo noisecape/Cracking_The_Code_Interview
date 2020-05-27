@@ -13,6 +13,7 @@ public class LinkedListNode {
     
     int data;
     LinkedListNode next;
+    LinkedListNode prev;
     
     LinkedListNode(int data, LinkedListNode next){
         this.data = data;

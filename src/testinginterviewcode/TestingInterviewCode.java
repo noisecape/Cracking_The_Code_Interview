@@ -19,14 +19,16 @@ public class TestingInterviewCode {
      */
     public static void main(String[] args) {
         TestingInterviewCode main = new TestingInterviewCode();
-        LinkedListNode node1 = new LinkedListNode(3,null);
-        LinkedListNode node2 = new LinkedListNode(5,node1);
-        LinkedListNode node3 = new LinkedListNode(1,node2);
-        LinkedListNode node4 = new LinkedListNode(76,node3);
-        LinkedListNode node5 = new LinkedListNode(7,node4);
-        LinkedListNode head = new LinkedListNode(9,node5);
-        int solution = new KtoLastElement().getKtoLastElement(5,head);
-        System.out.println(solution);
+        StackPlates stack_plates = new StackPlates(3);
+        stack_plates.addElement(4);
+        stack_plates.addElement(2);
+        stack_plates.addElement(433);
+        stack_plates.addElement(4);
+        stack_plates.addElement(11);
+        stack_plates.addElement(12);
+        stack_plates.addElement(34);
+        stack_plates.popValue();
+        stack_plates.popAt(1);
     }
     
     boolean solution_ex1_1(String string){
