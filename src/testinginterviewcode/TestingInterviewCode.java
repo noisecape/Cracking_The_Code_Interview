@@ -7,6 +7,8 @@ package testinginterviewcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  *
@@ -19,16 +21,40 @@ public class TestingInterviewCode {
      */
     public static void main(String[] args) {
         TestingInterviewCode main = new TestingInterviewCode();
-        StackPlates stack_plates = new StackPlates(3);
-        stack_plates.addElement(4);
-        stack_plates.addElement(2);
-        stack_plates.addElement(433);
-        stack_plates.addElement(4);
-        stack_plates.addElement(11);
-        stack_plates.addElement(12);
-        stack_plates.addElement(34);
-        stack_plates.popValue();
-        stack_plates.popAt(1);
+        GraphNode node0 = new GraphNode(0);
+        GraphNode node1 = new GraphNode(1);
+        GraphNode node2 = new GraphNode(2);
+        GraphNode node3 = new GraphNode(3);
+        GraphNode node4 = new GraphNode(4);
+        GraphNode node5 = new GraphNode(5);
+        
+        LinkedList<GraphNode> list0 = new LinkedList<>();
+        list0.add(node1);
+        list0.add(node2);
+        node0.adjacents = list0;
+        
+        LinkedList<GraphNode> list1 = new LinkedList<>();
+        list1.add(node3);
+        node1.adjacents = list1;
+        
+        LinkedList<GraphNode> list2 = new LinkedList<>();
+        list2.add(node3);
+        list2.add(node1);
+        node2.adjacents = list2;
+        
+        LinkedList<GraphNode> list3 = new LinkedList<>();
+        list3.add(node4);
+        node3.adjacents = list3;
+        
+        LinkedList<GraphNode> list4 = new LinkedList<>();
+        list4.add(node5);
+        list4.add(node2);
+        node4.adjacents = list4;
+        
+        LinkedList<GraphNode> list5 = new LinkedList<>();
+        node5.adjacents = list5;
+        
+        System.out.println(new RouteBetweenNodes().isPath(node3, node2));
     }
     
     boolean solution_ex1_1(String string){
