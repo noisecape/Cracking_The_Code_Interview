@@ -7,6 +7,7 @@ package testinginterviewcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -21,40 +22,15 @@ public class TestingInterviewCode {
      */
     public static void main(String[] args) {
         TestingInterviewCode main = new TestingInterviewCode();
-        GraphNode node0 = new GraphNode(0);
-        GraphNode node1 = new GraphNode(1);
-        GraphNode node2 = new GraphNode(2);
-        GraphNode node3 = new GraphNode(3);
-        GraphNode node4 = new GraphNode(4);
-        GraphNode node5 = new GraphNode(5);
+        BT_Node node1 = new BT_Node(3,null,null);
+        BT_Node node2 = new BT_Node(4,node1,null);
+        BT_Node node3 = new BT_Node(7,null,null);
+        BT_Node node4 = new BT_Node(22,null,node3);
+        BT_Node node5 = new BT_Node(11,node4,null);
+        BT_Node root = new BT_Node(9,node2,node5);
+        HashMap<Integer,LinkedList<BT_Node>> table = new HashMap<>();
         
-        LinkedList<GraphNode> list0 = new LinkedList<>();
-        list0.add(node1);
-        list0.add(node2);
-        node0.adjacents = list0;
-        
-        LinkedList<GraphNode> list1 = new LinkedList<>();
-        list1.add(node3);
-        node1.adjacents = list1;
-        
-        LinkedList<GraphNode> list2 = new LinkedList<>();
-        list2.add(node3);
-        list2.add(node1);
-        node2.adjacents = list2;
-        
-        LinkedList<GraphNode> list3 = new LinkedList<>();
-        list3.add(node4);
-        node3.adjacents = list3;
-        
-        LinkedList<GraphNode> list4 = new LinkedList<>();
-        list4.add(node5);
-        list4.add(node2);
-        node4.adjacents = list4;
-        
-        LinkedList<GraphNode> list5 = new LinkedList<>();
-        node5.adjacents = list5;
-        
-        System.out.println(new RouteBetweenNodes().isPath(node3, node2));
+        new ListOfDepths().createLists(root);
     }
     
     boolean solution_ex1_1(String string){
